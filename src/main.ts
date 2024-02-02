@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
-import * as morgan from 'morgan'
+import * as morgan from 'morgan';
 import { CORS } from './constants';
 
 async function bootstrap() {
@@ -11,7 +11,6 @@ async function bootstrap() {
   app.enableCors(CORS);
   app.setGlobalPrefix('API');
   await app.listen(ConfigServices.get('PORT'));
-  console.log(`Aplicaticon running on: ${await app.getUrl()}`)
-
+  console.log(`Aplicaticon running on: ${await app.getUrl()}`);
 }
 bootstrap();

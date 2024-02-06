@@ -18,7 +18,18 @@ interface Pokemon {
 export const bulbasaur: Pokemon = {
      id: 1,
      name: 'bulbasaur',
- }
+}
 
- console.log(bulbasaur);
+export const charmander: Pokemon = {
+    id: 2,
+    name: 'Charmander',
+    age: 2
+}
 
+
+export const pokemons: Pokemon[] = [];
+
+pokemons.push(bulbasaur);
+pokemons.push(charmander);
+
+console.log(pokemons);

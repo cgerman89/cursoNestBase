@@ -1,13 +1,13 @@
 
 import { Move, PokeapiResponse } from "../interfaces/pokeapi-response.interface";
-import { PokeApiAdapter } from "../api/pokeApi.adapter";
+import { HttpAdapter, PokeApiAdapter, PokeApiFecthAdapter } from "../api/pokeApi.adapter";
 
 export class Pokemon {
 
     constructor(
         public id: number,
         public name: string,
-        private readonly http: PokeApiAdapter
+        private readonly http: HttpAdapter
     ){}
 
     //get
@@ -36,6 +36,7 @@ export class Pokemon {
 }
 
 const pokeapi = new PokeApiAdapter();
+const pokeFetch = new PokeApiFecthAdapter();
 
 export const chamander = new Pokemon(12, 'Charmander', pokeapi);
 chamander.getMovies();
